@@ -1,6 +1,6 @@
 package com.grc.opengrc.repository;
 
-import com.grc.opengrc.assessment.RiskAssessment;
+import com.grc.opengrc.entity.assessment.RiskAssessment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

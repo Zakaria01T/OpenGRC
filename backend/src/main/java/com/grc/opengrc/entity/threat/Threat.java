@@ -1,10 +1,10 @@
-package com.grc.opengrc.threat;
+package com.grc.opengrc.entity.threat;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-import com.grc.opengrc.vulnerability.Vulnerability;
+import com.grc.opengrc.entity.vulnerability.Vulnerability;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;

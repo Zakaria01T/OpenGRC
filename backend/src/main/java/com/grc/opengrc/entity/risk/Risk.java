@@ -1,6 +1,5 @@
-package com.grc.opengrc.treatment;
+package com.grc.opengrc.entity.risk;
 
-import com.grc.opengrc.risk.Risk;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -10,37 +9,37 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.UUID;
 
-@Entity
-@Table(name = "risk_treatment_plans")
+@Entity 
+@Table(name = "risks")
 @EntityListeners(AuditingEntityListener.class)
-public class RiskTreatmentPlan {
+public class Risk {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "risk_id", nullable = false, updatable = false)
-  private Risk risk;
+  @Column(nullable = false, unique = true, length = 20)
+  private String reference; // RSK-0001, from risk_reference_seq
 
-  @Enumerated(EnumType.STRING)
-  @Column(nullable = false, length = 10)
-  private TreatmentStrategy strategy;
-
+  @Column(nullable = false, length = 200)
+  private String title;
   @Column(nullable = false, columnDefinition = "text")
   private String description;
   @Column(columnDefinition = "text")
-  private String rationale;
+  private String threat;
+  @Column(columnDefinition = "text")
+  private String vulnerability;
+
+  @Column(name = "asset_id", nullable = false)
+  private UUID assetId;
   @Column(name = "owner_id", nullable = false)
   private UUID ownerId;
-  @Column(name = "target_date", nullable = false)
-  private LocalDate targetDate;
 
   @Enumerated(EnumType.STRING)
-  @Column(nullable = false, length = 15)
-  private TreatmentStatus status = TreatmentStatus.PLANNED;
+  @Column(nullable = false, length = 30)
+  private RiskStatus status = RiskStatus.DRAFT;
 
-  @Column(name = "completed_at")
-  private Instant completedAt;
+  @Column(name = "next_review_date")
+  private LocalDate nextReviewDate;
 
   @CreatedDate
   @Column(name = "created_at", nullable = false, updatable = false)

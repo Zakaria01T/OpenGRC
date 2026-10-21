@@ -1,6 +1,6 @@
-package com.grc.opengrc.assessment;
+package com.grc.opengrc.entity.assessment;
 
-import com.grc.opengrc.risk.Risk;
+import com.grc.opengrc.entity.risk.Risk;
 import jakarta.persistence.*;
 
 import java.time.Instant;

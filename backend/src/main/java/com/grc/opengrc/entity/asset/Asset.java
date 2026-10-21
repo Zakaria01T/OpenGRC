@@ -1,10 +1,10 @@
-package com.grc.opengrc.asset;
+package com.grc.opengrc.entity.asset;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-import com.grc.opengrc.vulnerability.Vulnerability;
+import com.grc.opengrc.entity.vulnerability.Vulnerability;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;

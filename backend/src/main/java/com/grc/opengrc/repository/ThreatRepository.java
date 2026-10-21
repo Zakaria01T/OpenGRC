@@ -1,6 +1,6 @@
 package com.grc.opengrc.repository;
 
-import com.grc.opengrc.threat.Threat;
+import com.grc.opengrc.entity.threat.Threat;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

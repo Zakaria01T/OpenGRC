@@ -1,4 +1,4 @@
-package com.grc.opengrc.control;
+package com.grc.opengrc.entity.control;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

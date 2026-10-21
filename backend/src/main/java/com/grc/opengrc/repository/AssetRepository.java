@@ -1,6 +1,6 @@
 package com.grc.opengrc.repository;
 
-import com.grc.opengrc.entity.Asset;
+import com.grc.opengrc.entity.asset.Asset;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
