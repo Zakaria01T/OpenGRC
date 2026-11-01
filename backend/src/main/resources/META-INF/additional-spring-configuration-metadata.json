@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "app.admin.email",
+      "type": "java.lang.String",
+      "description": "Email of the initial GRC administrator created at startup."
+    },
+    {
+      "name": "app.admin.password",
+      "type": "java.lang.String",
+      "description": "Password of the initial administrator (at least 12 characters). Read from the ADMIN_PASSWORD environment variable, never commit a real value."
+    }
+  ]
+}
